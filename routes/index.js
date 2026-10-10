@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const feedbackController = require('../controllers/feedbackController');
 const homeController = require('../controllers/homeController');
 const aboutController = require('../controllers/aboutController');
 const menuController = require('../controllers/menuController');
@@ -10,6 +10,7 @@ const adminController = require('../controllers/adminController');
 const superAdminController = require('../controllers/superAdminController');
 
 const { requireAuth, requireAdmin, requireSuperAdmin } = require('../middleware/auth');
+
 
 router.get('/', homeController.getHome);
 router.get('/about', aboutController.getAbout);
@@ -40,4 +41,5 @@ router.post('/superadmin/restaurants', requireSuperAdmin, superAdminController.a
 router.post('/superadmin/restaurants/:id/remove', requireSuperAdmin, superAdminController.removeRestaurant);
 router.post('/superadmin/grant-admin', requireSuperAdmin, superAdminController.grantAdmin);
 
+router.post('/restaurants/:id/feedback', feedbackController.submitFeedback);
 module.exports = router;
