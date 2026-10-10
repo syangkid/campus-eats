@@ -2,22 +2,29 @@
 campus-eats/
 ├── config/
 │   └── db.js
+│   └── mongo.js 
 ├── controllers/
-│   ├── homeController.js      (Controller — pages)
 │   ├── aboutController.js
+│   ├── adminController.js
+│   ├── apiController.js
+│   ├── authController.js
+│   ├── feedbackController.js
+│   ├── homeController.js    
 │   ├── menuController.js
 │   ├── orderController.js
-│   └── apiController.js       (Controller — JSON API, new)
+│   └── superAdminController.js
 ├── models/
-│   ├── Restaurant.js          (unchanged — reused by both Controllers)
-│   ├── MenuItem.js            (unchanged — reused by both Controllers)
-│   └── Order.js               (unchanged — reused by both Controllers)
+│   ├── Feedback.js
+│   ├── MenuItem.js  
+│   ├── Order.js
+│   ├── Restaurant.js 
+│   └── User.js
 ├── routes/
-│   ├── index.js               (Routing — page routes)
-│   └── api.js                 (Routing — /api/* JSON routes, new)
+│   ├── index.js        
+│   └── api.js               
 ├── views/
 ├── public/
-├── app.js                     (now mounts both routers, plus express.json())
+├── app.js                  
 ├── .env
 ├── .gitignore
 ├── nodemon.json
