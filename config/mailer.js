@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
-
+ 
 async function sendVerificationEmail(toEmail, token) {
   const link = `${process.env.APP_URL}/verify/${token}`;
 
